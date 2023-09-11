@@ -31,28 +31,36 @@ def task():
     '''
     while True:
         try:
-            print(list(bouquet.keys()))
-            bouquet_name = input('Введите название букетов из предложенного списка: ')
-
             match int(input('Выберите операцию' + menu)):
                 case 1:
-                    print(bouquet_name + ' ' + bouquet[bouquet_name][0])
+                    for i in bouquet:
+                        print(i + ' ' + bouquet[i][0])
                 case 2:
-                    print(bouquet_name + ' ' + str(bouquet[bouquet_name][1]) + ' руб')
+                    for i in bouquet:
+                        print(i + ' ' + str(bouquet[i][1]) + ' руб')
                 case 3:
-                    print(bouquet_name + ' ' + str(bouquet[bouquet_name][2]) + ' шт')
+                    for i in bouquet:
+                        print(i + ' ' + str(bouquet[i][2]) + ' шт')
                 case 4:
-                    print(bouquet_name)
-                    for i in range(len(bouquet[bouquet_name])):
-                        print(str(bouquet[bouquet_name][i]) + characteristics[i])
+                    for i in bouquet:
+                        print(i)
+                        for _ in range(len(bouquet[i])):
+                            print(str(bouquet[i][_]) + characteristics[_])
                 case 5:
+                    bouquet_name = input('Введите название букета: ')
+                    quantity = int(input('Введите количество: '))
+                    if bouquet[bouquet_name][2] - quantity < 0:
+                        raise ValueError
                     print('Произошла покупка:')
                     print(
-                        f"Вы купили один букет {bouquet_name}, осталось {bouquet[bouquet_name][2] - 1} шт")
+                        f"Вы купили {quantity} букет(-ов) {bouquet_name}, осталось {bouquet[bouquet_name][2] - quantity} шт")
                 case 6:
-                    exit()
+                    break
         except KeyError:
             print('Неверный ввод букета')
+
+        except ValueError:
+            print('Слишком большое количество')
 
 
 task()
