@@ -12,9 +12,8 @@ with open('F1.txt', 'w') as f1:
         f1.write(line + '\n')
 
 with open('F1.txt', 'r') as f1, open('F2.txt', 'w') as f2:
-    # Читаем строки из F1
     for line in f1:
-        # Проверяем, начинается ли строка с буквы "А" (регистронезависимо)
+        # Проверка, начинается ли строка с буквы "А" (регистронезависимо)
         if line.strip().lower().startswith('а'):
             f2.write(line)
 

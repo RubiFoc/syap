@@ -16,7 +16,7 @@ with open('subjects.txt', 'r', encoding="utf-8") as file:
     # Считываем строки из файла
     lines = file.readlines()
 
-# Разбираем строки и добавляем информацию в словарь
+# добавление информации в словарь
 for line in lines:
     parts = line.strip().split(':')
     if len(parts) == 2:

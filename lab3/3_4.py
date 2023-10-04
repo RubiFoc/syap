@@ -19,13 +19,11 @@
 
 import json
 
-
 firm_list = []
 total_profit = 0
 firm_count = 0
 
 with open('firm_data.txt', 'r', encoding="utf-8") as file:
-    # Считываем строки из файла
     lines = file.readlines()
 
 for line in lines:
@@ -36,8 +34,8 @@ for line in lines:
         expenses = float(expenses)
         profit = revenue - expenses
 
+        firm_list.append({name: profit})  # Включаем все фирмы в список, даже с отрицательной прибылью
         if profit > 0:
-            firm_list.append({name: profit})
             total_profit += profit
             firm_count += 1
 

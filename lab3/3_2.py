@@ -19,8 +19,6 @@ for line in lines:
 
 sorted_results = sorted(results, key=lambda x: x[1])
 
-# Выводим информацию о первых трех местах
 print("Результаты соревнований:")
-for i, (name, result) in enumerate(sorted_results):
+for name, result in sorted_results:
     print(f"{result} место: {name}")
-
