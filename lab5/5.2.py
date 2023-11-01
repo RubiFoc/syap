@@ -40,4 +40,4 @@ print("Сводная таблица:")
 print(pivot_table)
 
 # 8. Сохранить обработанный массив без выбросов и пропусков в файл "surname.csv".
-data.to_csv("new.csv", index=False)
+data.to_csv("surname.csv", index=False)
