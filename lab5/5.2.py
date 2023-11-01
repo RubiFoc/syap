@@ -24,7 +24,6 @@ plt.title('Гистограмма (логарифмическая шкала)')
 plt.show()
 
 # 5. Заполнить пропуски и обработать аномальные значения.
-# Выберите только числовые столбцы для заполнения пропусков.
 numeric_columns = ['Square', 'LifeSquare', 'KitchenSquare', 'Healthcare_1']
 data[numeric_columns] = data[numeric_columns].fillna(data[numeric_columns].mean())
 data = data[(data['Square'] > 20) & (data['Square'] < 200)]
