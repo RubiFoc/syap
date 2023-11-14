@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('test.csv')
 
 # 2. Взять 1000 значений из выбранного датасета.
-data = data.sample(n=1000, random_state=42)
+data = data.head(1000)
 
 # 3. Проверить данные на пропуски.
 missing_values = data.isnull().sum()
